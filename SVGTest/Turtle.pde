@@ -11,6 +11,8 @@
 private String todo;
 private float size, angle;
 
+private int stage;
+
 class Turtle {
   
   Turtle(String tempTodo, float tempSize, float tempAngle){
@@ -44,4 +46,7 @@ class Turtle {
     } 
   }
   
+  void setStage(int i) {
+    stage = i;
+  }
 }
