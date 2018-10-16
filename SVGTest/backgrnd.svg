@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: #f89e9e;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
+    
+    <path id="Path_3" data-name="Path 3" class="cls-2" d="M0,679.8V998.748H1919.828V838.083Z" transform="translate(0 80.08)"/>
+    <path id="Path_1" data-name="Path 1" class="cls-2" d="M0,760.3v274.9H1919.828V741.631Z" transform="translate(0 43.621)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-2" d="M1920.172,679.8v263.53H0V810.584Z" transform="translate(-0.172 135.493)"/>
+    <path id="Path_4" data-name="Path 4" class="cls-2" d="M1920.172,679.8v202.61H0V780.352Z" transform="translate(-0.172 196.413)"/>
+  </g>
+</svg>

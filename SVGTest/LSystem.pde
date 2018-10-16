@@ -14,7 +14,7 @@ class LSystem {
     
     //generate all sentences
     for(int ii = 0; ii < iterations; ii++) {
-      
+
       next.setLength(0);
       
       // go through each char in a sentence
