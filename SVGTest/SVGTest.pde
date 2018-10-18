@@ -13,8 +13,8 @@ int lastTime, momoAge, previousMomo; //various timing-related temp-values
 boolean momoNyt; // temp value for displaying momo
 
 void setup() {
-  size(1280, 720, P2D); 
-  //fullScreen(P3D);
+  //size(1280, 720, P2D); 
+  fullScreen(P3D);
     
   momo = loadShape("MOMO-MIN.svg");
   momo.disableStyle();
@@ -73,16 +73,16 @@ void draw() {
     momoAge += time - lastTime;
     
     float alpha1 = map(momoLifetime/2-abs(momoAge-momoLifetime/2), 0, momoLifetime, 0, 240);
-    float alpha2 = map(abs(momoAge-momoLifetime/2), 0, momoLifetime, 240, 0);
+    //float alpha2 = map(abs(momoAge-momoLifetime/2), 0, momoLifetime, 240, 0);
     fill(240, alpha1);
-  
-    stroke(240, alpha2);
+    noStroke();
     shape(momo, (width-0.8*height)/2, 0.1*height, 0.8*height, 0.8*height);
   }
   
   // Remove momo marker if drawing finished
-  if(momoAge > momoLifetime) {
+  if(momoNyt && momoAge > momoLifetime) {
        momoNyt = false;
+       momoAge = 0;
        previousMomo = minute();
   }
   
