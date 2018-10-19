@@ -5,7 +5,7 @@ Turtle turtle;
 
 int treeAmount = 30; // total tree count
 int treeLifetime = 60000; //lifetime in ms
-int momoLifetime = 5000; //lifetime in ms
+int momoLifetime = 10000; //lifetime in ms
 
 int treeAges[], treeOffsets[], treePositions[], treeComplexities[]; 
 
@@ -13,12 +13,12 @@ int lastTime, momoAge, previousMomo; //various timing-related temp-values
 boolean momoNyt; // temp value for displaying momo
 
 void setup() {
-  //size(1280, 720, P2D); 
-  fullScreen(P3D);
+  size(1280, 720, P2D); 
+  //fullScreen(P3D);
     
   momo = loadShape("MOMO-MIN.svg");
   momo.disableStyle();
-  previousMomo = minute();
+  previousMomo = second()%30;
   momoNyt = false;
 
   Rule[] ruleSet = new Rule[1];
@@ -40,8 +40,9 @@ void setup() {
 
 void draw() {
   
-  if(!momoNyt & previousMomo!=minute()) {
+  if(!momoNyt & previousMomo>second()%30) {
     momoNyt = true;
+    //println(second()%30);
   }
   
   // Draw blur effect fading background
@@ -83,7 +84,7 @@ void draw() {
   if(momoNyt && momoAge > momoLifetime) {
        momoNyt = false;
        momoAge = 0;
-       previousMomo = minute();
+       previousMomo = second()%30;
   }
   
   //Remember time between draws
