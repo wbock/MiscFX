@@ -18,7 +18,7 @@ void setup() {
     
   momo = loadShape("MOMO-MIN.svg");
   momo.disableStyle();
-  previousMomo = minute()%10;
+  previousMomo = minute()%15;
   momoNyt = false;
 
   Rule[] ruleSet = new Rule[1];
@@ -40,9 +40,9 @@ void setup() {
 
 void draw() {
   
-  if(!momoNyt & previousMomo>minute()%10) {
+  if(!momoNyt & previousMomo>minute()%15) {
     momoNyt = true;
-    //println(minute()%10);
+    //println(minute()%15);
   }
   
   // Draw blur effect fading background
@@ -84,7 +84,7 @@ void draw() {
   if(momoNyt && momoAge > momoLifetime) {
        momoNyt = false;
        momoAge = 0;
-       previousMomo = minute()%10;
+       previousMomo = minute()%15;
   }
   
   //Remember time between draws
