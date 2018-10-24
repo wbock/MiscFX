@@ -4,8 +4,8 @@ LSystem lsys;
 Turtle turtle;
 
 int treeAmount = 30; // total tree count
-int treeLifetime = 60000; //lifetime in ms
-int momoLifetime = 10000; //lifetime in ms
+int treeLifetime = 120000; //lifetime in ms
+int momoLifetime = 20000; //lifetime in ms
 
 int treeAges[], treeOffsets[], treePositions[], treeComplexities[]; 
 
@@ -14,11 +14,11 @@ boolean momoNyt; // temp value for displaying momo
 
 void setup() {
   size(1280, 720, P2D); 
-  //fullScreen(P3D);
+  //fullScreen(P3D,2);
     
   momo = loadShape("MOMO-MIN.svg");
   momo.disableStyle();
-  previousMomo = second()%30;
+  previousMomo = minute()%15;
   momoNyt = false;
 
   Rule[] ruleSet = new Rule[1];
@@ -40,9 +40,9 @@ void setup() {
 
 void draw() {
   
-  if(!momoNyt & previousMomo>second()%30) {
+  if(!momoNyt & previousMomo>minute()%15) {
     momoNyt = true;
-    //println(second()%30);
+    //println(minute()%15);
   }
   
   // Draw blur effect fading background
@@ -84,7 +84,7 @@ void draw() {
   if(momoNyt && momoAge > momoLifetime) {
        momoNyt = false;
        momoAge = 0;
-       previousMomo = second()%30;
+       previousMomo = minute()%15;
   }
   
   //Remember time between draws
